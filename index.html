@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Test </title>
+
+  <!-- Bootstrap -->
+  <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"> 
+  <!-- Custom style -->
+  <link rel="stylesheet" type="text/css" href="css/the-blue-green-space.css">
+</head>
+<body>
+
+  <section id="header" class="blue">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6">
+          <h1>How blues and greens color the number of admissions.</h1>
+          <h2>A visual exploration of patients' living environment.</h2>
+        </div>
+        <div class="col-xs-3">
+        </div>
+        <div class="col-xs-3">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="content">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <p>
+          <strong>The data</strong><br/>
+            LeeftijdCategorie: patient ages<br/>
+            opname_duur: number of admission days<br/>
+            Blue/green relative 100..500: the sq meters of green/blue in the patient's environment<br/>
+          </p>
+          <p>
+          <strong>The steps</strong> <br/>
+          filter data <> "-1"<br/>
+          compute values: color value * number of admission days<br/>
+          group number of admissions by age, color and distance
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12" id="test">
+          <p>
+          <strong>The charts</strong> <br/>
+          </p>
+          <div id="viz"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12" id="test">
+          <p class="small">
+          Color intensity: the darker the color, the more admission days<br>
+<!--           Because the color scale is relative to the number of admission days, the color intensity of blue and green are equal.<br> -->
+          </p> 
+          <p>
+          <strong>The (provisional) take-away</strong> <br/>
+          In general: the farther away the green and blue, the more admission days for you. <br/>
+          Blue seems to be a better predictor than green.<br/>
+          But, no obvious differences between age categories.
+          </p>
+          <p>
+          <strong>Todo</strong> <br/>
+          Divide by the number of patients per category for normalization.<br/>
+          Add more dimensions (gender, diagnosis, ...)<br/>
+          Are same patients in multiple categories? (e.g. many admissions over a life time)
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <!-- 3rd Party Dependencies -->
+  <script src="bower_components/moment/min/moment.min.js"></script>
+  <script src="bower_components/d3/d3.min.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/queue-async/queue.min.js"></script>
+  <script src="bower_components/d3-tip/index.js"></script>
+
+  <!-- Custom Code -->
+  <script src="src/the-blue-green-space.js"></script>
+
+</body>
+</html>
